@@ -62,6 +62,26 @@ bool read_case(){
 	return true;
 }
 
+void print_ans(Node u) {
+  // 从目标结点逆序追溯到初始结点
+  vector<Node> nodes;
+  for(;;) {
+    nodes.push_back(u);
+    if(d[u.r][u.c][u.dir] == 0) break;
+    u = p[u.r][u.c][u.dir];
+  }
+  nodes.push_back(Node(r0, c0, dir));
+
+  // 打印解，每行10个
+  int cnt = 0;
+  for(int i = nodes.size()-1; i >= 0; i--) {
+    if(cnt % 10 == 0) printf(" ");
+    printf(" (%d,%d)", nodes[i].r, nodes[i].c);
+    if(++cnt % 10 == 0) printf("\n");
+  }
+  if(nodes.size() % 10 != 0) printf("\n");
+}
+
 void solve() {
 	queue<Node> q;
 	memset(d, -1, sizeof(d));
@@ -71,7 +91,7 @@ void solve() {
 	while (!q.empty()) {
 		Node u = q.front(); q.pop();
 		if (u.r == r2 && u.c == c2) {
-			//输出结果
+			print_ans(u);
 			return;
 		}
 		for(int i=0; i<3; i++)
@@ -92,5 +112,8 @@ void solve() {
 
 int main()
 {
-
+	while(read_case()) {
+    solve();
+  }
+  return 0;
 }
