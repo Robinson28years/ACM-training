@@ -13,26 +13,21 @@ int lmp(int a, int b){
 		m=n;
 		n=r;
 	} while(r!=0);
-	return a*b/m;
+	return a/m*b;
 }
 
 
 int main()
 {
-	int k[100];
-	int j=0;
-	string line;
-	getline(cin,line);
-	stringstream ss(line);
-	int x;
-	while (ss >> x) {
-		 k[j++]=x;
-	}
-	int b;
-	for(int i=1; i<j; i++)
-	{
-		b=lmp(k[i],k[i-1]);
-		b=lmp(b,k[i+1]);
+	int x,y;
+	while (std::cin >> x) {
+		int b=1;
+		for(int i=0; i<x; i++)
+		{
+			std::cin >> y;
+			b=lmp(b,y);
+		}
+		std::cout << b << '\n';
 	}
 
 }

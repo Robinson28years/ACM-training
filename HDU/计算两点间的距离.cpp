@@ -3,8 +3,8 @@ using namespace std;
 
 int main()
 {
-	int x1,x2,y1,y2;
-	while (std::cin >> x1 >> x2 >> y1 >> y2) {
+	double x1,x2,y1,y2;
+	while (std::cin >> x1 >> y1 >> x2 >> y2) {
 		double d;
 		d = (x1-x2)*(x1-x2)+(y1-y2)*(y1-y2);
 		d = sqrt(d);
