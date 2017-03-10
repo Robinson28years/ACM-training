@@ -16,7 +16,7 @@ int main()
 		int flag=1;
 		// j=sqrt(j);
 		// std::cout << j << '\n';
-		for(int i=2; i<sqrt(j); i++)
+		for(int i=2; i<sqrt(j)+0.5; i++)
 		{
 			if (j%i==0) {
 				flag=0;

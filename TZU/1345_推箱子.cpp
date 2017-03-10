@@ -42,30 +42,13 @@ void dfs(const Node& u,const Node& v)
 		return;
 	}
 	Node h = u;
-	// std::cout << "v" << v.r+1 << v.c+1 << '\n';
-	// std::cout << h.hr+1 << h.hc+1 << '\n';
-	// std::cout << "ok2" << '\n';
-	// std::cout << t[h.hr][h.hc]  << '\n';
 	if (h.hr==v.r&&h.hc==v.c && t[h.hr][h.hc]!=1 && t[h.hr][h.hr]!=2) {
-		// std::cout << "ok3" << '\n';
 		flag2=1;
 		return ;
 	}
 	else if (inside(h.hr, h.hc)&& t[h.hr][h.hc]!=8 && t[h.hr][h.hc]!=1 && (h.hc!=u.c || h.hr!=u.r) ) {
 		int u = t[h.hr][h.hc];
-
-		// std::cout << "in" << '\n';
 		t[h.hr][h.hc]=8;
-		// for(int i=0; i<m; i++)
-		// {
-		// 	for(int j=0; j<n; j++)
-		// 	{
-		// 		std::cout << t[i][j] << ' ';
-		// 	}
-		// 	std::cout << '\n';
-		// }
-		// std::cout << '\n';
-		// std::cout << h.hr <<" " << h.hc << '\n';
 		dfs(Node(h.r,h.c,h.hr,h.hc+1), v);
 		dfs(Node(h.r,h.c,h.hr,h.hc-1), v);
 		dfs(Node(h.r,h.c,h.hr+1,h.hc), v);
@@ -74,7 +57,6 @@ void dfs(const Node& u,const Node& v)
 		return ;
 	}
 	else {
-		// std::cout << "back" << '\n';
 		return ;
 	}
 }
@@ -115,7 +97,7 @@ void print_ans(Node u) {
 
 	}
 	// nodes.push_back(Node(r1,c1));
-	// int cnt = 0;
+	int cnt = 0;
 std::cout << nodes.size() << '\n';
 		// for(int i=nodes.size()-1; i>=0; i--)
 		// {
@@ -140,18 +122,12 @@ void solve() {
 		}
 		for(int i=0; i<4; i++)
 		{
-			// std::cout << "ok" << '\n';
 			Node v2 = walk2(u,i);
 			dfs(u,v2);
-			// std::cout << human << '\n';
 			Node v = walk(u,i);
-			// std::cout<< "gen"<< u.r+1<< " " << u.c+1<< " " << "cishi"<< v.r+1<< " " << v.c+1 <<" "<< flag2<<" "<<u.hr+1<<" "<< u.hc+1<< "tu "<<t[v.r][v.c] <<'\n';
-			// std::cout <<inside(v.r, v.c)<< d[v.r][v.c]<<t[v.r][v.c]<< flag2 << '\n';
 			if (inside(v.r, v.c) && d[v.r][v.c]<0  && t[v.r][v.c]!=1 && flag2 ) {
-				// std::cout << "ok5" << '\n';
 
 				d[v.r][v.c]=d[u.r][u.c]+1;
-				// std::cout << "dddd"<< v.r+1 << " " << v.c+1 << d[v.r][v.c] << '\n';
 				p[v.r][v.c] = u;
 				v.hr=u.r;
 				v.hc=u.c;

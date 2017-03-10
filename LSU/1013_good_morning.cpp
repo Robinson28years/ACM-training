@@ -52,7 +52,7 @@ void dfs(const Node& p, int sum) {
 
 int main()
 {
-	// freopen("C:/Users/Robinson-5/Desktop/in.txt", "r", stdin);
+	// freopen("C:/Users/Robinson-5/Desktop/i.in", "r", stdin);
 	//
 	// freopen("C:/Users/Robinson-5/Desktop/out.txt", "w", stdout);
 	 dfs(Node(0,0),0);
@@ -71,7 +71,7 @@ int main()
 		for(int i=0; i<k; i++)
 		{
 			// std::cout << abs(j-d[i]) << '\n';
-			if (abs(j-d[i])<min) {
+			if (abs(j-d[i])<=min) {
 				min=abs(j-d[i]);
 				flag=i;
 				if (min==0) {
