@@ -10,11 +10,15 @@ using namespace std;
 int main()
 {
 	string line;
-	getline(cin,line);
-	stringstream ss(line);
-	char x;
-	while (ss >> x) {
-		std::cout << x << '\n';
+	// getline(cin,line);
+	// stringstream ss(line);
+	// char x;
+	// while (ss >> x) {
+	// 	std::cout << x << '\n';
+	// }
+
+	while (getline(cin,line)) {
+		std::cout << line << '\n';
 	}
 
 
