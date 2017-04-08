@@ -6,7 +6,7 @@ std::map<Set, int> Cache;
 
 int main()
 {
-	
+
 	std::map<string, int> cns;
 	cns["qq"]=4;
 	cns["uu"]=5;
