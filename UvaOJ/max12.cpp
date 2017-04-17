@@ -40,9 +40,9 @@ void searchmax(int low, int high, double &m1, double &m2) {
 
 int main(){
 	int x;
-	std::cout << "请输入要输入元素个数" << '\n';
+	// std::cout << "请输入要输入元素个数" << '\n';
 	std::cin >> x;
-	std::cout << "请输入元素" << '\n';
+	// std::cout << "请输入元素" << '\n';
 	for(int i=0; i<x; i++){
 		std::cin >> c[i];
 	}
