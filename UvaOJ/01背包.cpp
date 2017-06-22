@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
-	
 	int w[6]={0,2,2,6,5,4};
 	int v[6]={0,6,3,5,4,6};
 	int f[100][100];

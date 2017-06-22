@@ -10,6 +10,7 @@ int main()
 	std::map<string, int> cns;
 	cns["qq"]=4;
 	cns["uu"]=5;
+	std::cout << cns["jjj"] << '\n';
 	std::cout << cns["qq"] << '\n';
 	std::cout << cns.count("qq") << '\n';
 
