@@ -1,7 +1,8 @@
-#include "stdio.h"
+#include <bits/stdc++.h>
+using namespace std;
 
-int main() {
-    // int t = 9 % 5;
-    printf("%lf \n", 9/5);
-    return 0;
+int main(int argc, char const *argv[]) {
+	char a = 8;
+	printf( "%c1\b" , a);
+	return 0;
 }
