@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-	char a = 8;
-	printf( "%c12\b" , a);
+	char a[50];
+	std::cout << a << endl;
 	return 0;
 }
