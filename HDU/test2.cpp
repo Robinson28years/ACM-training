@@ -1,8 +1,8 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
 
-int main(int argc, char const *argv[]) {
-	char a[50];
-	std::cout << a << endl;
-	return 0;
+int main() {
+	char s[3][2];
+	scanf("%[^,],%[^,],%s",&s[0],&s[1],&s[2]);
+	printf("%s\n",s);
+
 }
