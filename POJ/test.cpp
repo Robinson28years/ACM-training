@@ -3,7 +3,15 @@ using namespace std;
 
 int main()
 {
-	int p[5]={3,2,5,1,8};
-	sort(p+1,p+5);
-	std::cout << p[4] << '\n';
+	int a;
+	cin>>a;
+	for(int j = 0;j < 10;j++)
+	{
+		int y;
+		cout<<j<<endl;
+	
+	}
+	// a=23;
+	cout<<a<<endl;
+	// std::cout << "hello world" << '\n';
 }
