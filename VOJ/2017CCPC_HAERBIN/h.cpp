@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+typedef long long ll; 
 
 int main(){
 int v;
@@ -11,7 +11,7 @@ while(v--){
     int a[100005];
     int q;
     cin>>q;
-    int sum=0;
+    ll sum=0;
     for(int i = 0;i < q;i++)
     {
         cin>>a[i];
@@ -19,21 +19,25 @@ while(v--){
         sum+=a[i];
     }
     int k=0;
-    int w=sum;
-    for(int i=2;i<=w;i++){
+    ll w=sum;
+    for(ll i=2;i*i<=w;i++){
         if(sum%i==0){
             z[k++]=i;
-            sum/=i;
-            // cout<<sum<<endl;
-            if(sum==1)break;
-            i--;
+            while(sum%i==0)  
+                {  
+                    sum/=i;  
+                } 
+            // sum/=i;
+            // // cout<<sum<<endl;
+            // if(sum==1)break;
+            // i--;
         }
     }
     // for(int i = 0;i < k;i++)
     // {
     //     cout<<z[i]<<endl;
     // }
-    int min =10000000;
+    ll min =1e8;
     for(int i = 0;i < k;i++)
     {
         int e[100005]={0};
@@ -46,7 +50,7 @@ while(v--){
         }
         sort(e,e+t);
         int u = t-1;
-        int count=0;
+        ll count=0;
         for(int j = 0;j < t;j++)
         {
             if(e[u]+e[j]<z[i]){
