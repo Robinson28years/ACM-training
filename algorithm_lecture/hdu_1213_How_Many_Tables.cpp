@@ -4,25 +4,23 @@ const int maxn = 1e6+7;
 int fa[maxn];
 int n;
 
-void init()  
-{  
+void init(){  
     for(int i=0;i<=2*n;i++)  
         fa[i]=i;  
 }  
-  
-int find(int a)  
-{  
-    if(a==fa[a])return a;  
-    return fa[a]=find(fa[a]);  
-}  
-  
-void un(int a,int b)  
-{  
-    a=find(a);  
-    b=find(b);  
-    if(a==b)return ;  
-    fa[a]=b;  
-}  
+int fi(int x){
+    return fa[x]==x?x:fa[x]=fi(fa[x]);
+}
+void un(int x,int y){
+    int p1=fi(x),p2=fi(y);
+    if(p1==p2)return;
+    fa[p1]=p2;
+}
+int check(int x,int y){
+    int p1=fi(x),p2=fi(y);
+    if(p1==p2)return 1;
+    else return 0;
+}
 
 
 int main()
@@ -31,11 +29,9 @@ int main()
  cin>>q;
  while(q--){
     set<int> s;
-    // for(int i=0;i<maxn;i++)
-    //     fa[i]=i;
     int m;
     cin>>n>>m;
-	init();
+    init();
     for (int i = 0; i < m; i++)
     {
         int x,y;
@@ -45,10 +41,10 @@ int main()
     int count=0;
     for (int i = 1; i <=n; i++)
     {
-        // s.insert(fi(i));
-        if(fa[i]==i)count++;
+        s.insert(fi(i));
+        // if(fa[i]==i)count++;
     }
-    // cout<<s.size()<<endl;
-    cout<<count<<endl;
+    cout<<s.size()<<endl;
+    // cout<<count<<endl;
  }
 }

@@ -1,6 +1,6 @@
 #include "bits/stdc++.h"
 using namespace std;
-#define eps (1e-6)  
+#define eps (1e-8)  
 
 int main()
 {
@@ -20,8 +20,8 @@ int main()
     for(int i=0;i<n;i++)
     low=max(low,-s[i]);
     while(true){
-        q++;
-        if(q==10000)break;
+        // q++;
+        // if(q==10000)break;
         c=(low+high)/2;
         // cout<<low<<" "<<c<<" "<<high<<" "<<t<<endl;
         result=0.0;
@@ -34,9 +34,9 @@ int main()
         // else high = c;
 
         // cout<<result<<" "<<t<<endl;
-        if(result<=(t+eps)&&result>=(t-eps)){
+        if((high-low)<1e-6){
             break;
-        }else if(result<(t-eps)&&result>=0){
+        }else if(result<t&&result>=0){
             high = c;
         }else{
             low = c;
