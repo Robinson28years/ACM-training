@@ -9,7 +9,7 @@ int fi(int x){
 void un(int x,int y){
     int p1=fi(x),p2=fi(y);
     if(p1==p2)return;
-    fa[x]=y;
+    fa[p1]=p2;
 }
 int check(int x,int y){
     int p1=fi(x),p2=fi(y);
