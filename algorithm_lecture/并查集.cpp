@@ -23,4 +23,9 @@ int main()
     for(int i=0;i<maxn;i++)
         fa[i]=i;
 
+    un(1,2);
+    un(3,2);
+    un(3,4);
+    cout<<check(1,3)<<endl;
+
 }
