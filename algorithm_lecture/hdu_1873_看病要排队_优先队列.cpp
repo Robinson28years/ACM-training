@@ -4,26 +4,34 @@ using namespace std;
 struct BR{
     int index;
     int level;
-    bool operator < (BR &a){
-        return a.level>level;
+    bool operator < (const BR &a) const{
+        if(a.level == level){
+            return a.index < index;
+        }else{
+            return a.level>level;
+        }
     }
 };
 
 int main()
 {
+    // freopen("in.in", "r", stdin);
+    // freopen("out.out", "w", stdout);
    int n;
-   cin>>n;
-   int q=0;
+while(cin>>n){
+       int q=0;
    BR br[3000];
    priority_queue<BR> pq[5];
    string s;
+   int z=0;
    for(int i=1;i<=n;i++){
        string s;
        cin>>s;
        if(s=="IN"){
+        z++;
         int x,y;
         cin>>x>>y;
-        br[q].index=i;
+        br[q].index=z;
         br[q].level=y;
         pq[x].push(br[q]);
         q++;  
@@ -37,4 +45,5 @@ int main()
            }
        }
    }
+}
 }
